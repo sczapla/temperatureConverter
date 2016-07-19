@@ -38,58 +38,62 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void convertValue(ActionEvent event) {
-        convertTemperature()
+        convertTemperature();
     }
 
     @FXML
     private void checkInCelcius(ActionEvent event) {
         inFahrenheit.setSelected(false);
         inKelvin.setSelected(false);
-        convertTemperature()
+        convertTemperature();
     }
 
     @FXML
     private void checkInFahrenheit(ActionEvent event) {
         inKelvin.setSelected(false);
         inCelcius.setSelected(false);
-        convertTemperature()
+        convertTemperature();
     }
 
     @FXML
     private void checkInKelvin(ActionEvent event) {
         inCelcius.setSelected(false);
         inFahrenheit.setSelected(false);
-        convertTemperature()
+        convertTemperature();
     }
 
     @FXML
     private void checkOutKelvin(ActionEvent event) {
         outCelcius.setSelected(false);
         outFahrenheit.setSelected(false);
-        convertTemperature()
+        convertTemperature();
     }
 
     @FXML
     private void checkOutFahrenheit(ActionEvent event) {
         outKelvin.setSelected(false);
         outCelcius.setSelected(false);
-        convertTemperature()
+        convertTemperature();
     }
 
     @FXML
     private void checkOutCelcius(ActionEvent event) {
         outFahrenheit.setSelected(false);
         outKelvin.setSelected(false);
-        convertTemperature()
+        convertTemperature();
     }
-    
-    private void convertTemperature(){
-	if (inCelcius.isSelected()) {
-            celciusConvert();
-        } else if (inFahrenheit.isSelected()) {
-            fahrenheitConvert();
-        } else if (inKelvin.isSelected()) {
-            kelvinConvert();
+
+    private void convertTemperature() {
+        try {
+            if (inCelcius.isSelected()) {
+                celciusConvert();
+            } else if (inFahrenheit.isSelected()) {
+                fahrenheitConvert();
+            } else if (inKelvin.isSelected()) {
+                kelvinConvert();
+            }
+        } catch (NumberFormatException ex) {
+            System.out.println("Niepoprawny format zapisu liczby.");
         }
     }
 
