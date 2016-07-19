@@ -38,52 +38,59 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void convertValue(ActionEvent event) {
-        if (inCelcius.isSelected()) {
-            celciusConvert();
-        } else if (inFahrenheit.isSelected()) {
-            fahrenheitConvert();
-        } else if (inKelvin.isSelected()) {
-            kelvinConvert();
-        }
+        convertTemperature()
     }
 
     @FXML
     private void checkInCelcius(ActionEvent event) {
         inFahrenheit.setSelected(false);
         inKelvin.setSelected(false);
-        celciusConvert();
+        convertTemperature()
     }
 
     @FXML
     private void checkInFahrenheit(ActionEvent event) {
         inKelvin.setSelected(false);
         inCelcius.setSelected(false);
-        fahrenheitConvert();
+        convertTemperature()
     }
 
     @FXML
     private void checkInKelvin(ActionEvent event) {
         inCelcius.setSelected(false);
         inFahrenheit.setSelected(false);
-        kelvinConvert();
+        convertTemperature()
     }
 
     @FXML
     private void checkOutKelvin(ActionEvent event) {
         outCelcius.setSelected(false);
         outFahrenheit.setSelected(false);
+        convertTemperature()
     }
 
     @FXML
     private void checkOutFahrenheit(ActionEvent event) {
         outKelvin.setSelected(false);
         outCelcius.setSelected(false);
+        convertTemperature()
     }
 
     @FXML
     private void checkOutCelcius(ActionEvent event) {
         outFahrenheit.setSelected(false);
         outKelvin.setSelected(false);
+        convertTemperature()
+    }
+    
+    private void convertTemperature(){
+	if (inCelcius.isSelected()) {
+            celciusConvert();
+        } else if (inFahrenheit.isSelected()) {
+            fahrenheitConvert();
+        } else if (inKelvin.isSelected()) {
+            kelvinConvert();
+        }
     }
 
     private void celciusConvert() {
